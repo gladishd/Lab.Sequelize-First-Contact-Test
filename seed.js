@@ -8,8 +8,16 @@ async function seed() {
   try {
     console.log(cyan('📡 Connecting to the database...'));
     // Connect to the database
+    // ^^^ Code above omitted for brevity
+    console.log(cyan("📡 Connecting to the database..."))
+    // Connect to the database
+    await db.sync({ force: true }) // 👈 Add this line
+
+    // vvv Code below omitted for brevity
 
     console.log(blue('🌱 Seeding the database...'));
+    await Plant.create({ name: 'Cauliflower' }); // 👈 Add this line. You can add a different vegetable if you don't like cauliflower.
+    await Plant.create({ name: "hello" })
 
     // Seed the database
 
